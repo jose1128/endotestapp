@@ -1,0 +1,144 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="row-sm-12">
+            <div class="alert alert-primary" role="alert">
+               Crear Diagnostico
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <form (ngSubmit)="createDiagnostic()" autocomplete="off" [formGroup]="diagnosticForm">
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <input type="text"
+                      class="form-control"
+                      formControlName="eps"
+                      placeholder="Nombre de la EPS">
+
+                      <span class="form-text text-danger"
+                            *ngIf="fieldIsValid('eps')">
+                            Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <input type="text"
+                      class="form-control"
+                      formControlName="idPatient"
+                      placeholder="Paciente">
+
+                      <span class="form-text text-danger"
+                            *ngIf="fieldIsValid('idPatient')">
+                            Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <input type="text"
+                      class="form-control"
+                      formControlName="idSpecialist"
+                      placeholder="Especialista">
+
+                      <span class="form-text text-danger"
+                            *ngIf="fieldIsValid('idSpecialist')">
+                            Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <textarea 
+                      class="form-control" 
+                      formControlName="reasonForConsultation"
+                      placeholder="Razon de la consulta"></textarea>
+
+                      <span class="form-text text-danger"
+                            *ngIf="fieldIsValid('reasonForConsultation')">
+                            Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <textarea 
+                      class="form-control" 
+                      formControlName="observations"
+                      placeholder="Observaciones"></textarea>
+
+                      <span class="form-text text-danger"
+                          *ngIf="fieldIsValid('observations')">
+                          Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <textarea 
+                      class="form-control" 
+                      formControlName="physicalExam"
+                      placeholder="Examenes Fisicos"></textarea>
+
+                      <span class="form-text text-danger"
+                          *ngIf="fieldIsValid('observations')">
+                          Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <textarea 
+                      class="form-control" 
+                      formControlName="antecedent"
+                      placeholder="Antecedentes"></textarea>
+
+                      <span class="form-text text-danger"
+                          *ngIf="fieldIsValid('antecedent')">
+                          Campo vacio
+                      </span>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="file">Imagen 1</label>
+                      <input type="file"
+                             id="file"
+                             (change)="handleFileInput($event)">
+                  </div>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="file">imagen 2</label>
+                      <input type="file"
+                             id="file"
+                             (change)="handleFileInput($event)">
+                  </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                      <button type="submit"
+                              class="btn btn-primary float-end">
+                          Guardar
+                      </button>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>
